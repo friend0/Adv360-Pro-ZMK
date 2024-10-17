@@ -1,5 +1,14 @@
 # Kinesis Advantage 360 Pro ZMK Config
 
+This layout is heavily inspired by Sunaku's layout for the Glove 80, with some minor tweaks to make it roughly 1:1
+with my layout for the ZSA Voyager. I am retaining QWERTY for the time being, but have readily adopted the symbol, cursor, and
+numpad/function layers, the latter of which I have combined to a single layer.
+
+The symbol layer doubles as the VIM layer, which obviates the separate layer I was using for my initial Voyager revisions.
+This layer prioritizes inward rolls, and is laid out such that the most utilized VIM shortcuts map logically to "VIM coordinates".
+
+Begin factory kinesis notes below:
+
 ## Modifying the keymap
 
 [The ZMK documentation](https://zmk.dev/docs) covers both basic and advanced functionality and has a table of OS compatibility for keycodes. Please note that the RGB Underglow, Backlight and Power Management sections are not relevant to the Advantage 360 Pro's custom ZMK fork. For more information see [this note](#note)
