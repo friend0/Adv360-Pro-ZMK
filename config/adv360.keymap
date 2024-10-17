@@ -67,11 +67,11 @@
 
         cursor {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans          &trans          &trans        &trans           &trans       &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &kp K_COPY      &kp K_UNDO      &kp K_CUT     &kp BACKSPACE    &kp K_PASTE  &kp C_AC_SEARCH
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp RETURN   &kp RC(L)
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &kp HOME        &kp PG_DN       &kp PG_UP     &kp END          &trans       &kp RC(F)
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans                  &trans          &trans        &trans           &trans       &trans
+&kp ESCAPE       &kp ENTER    &kp SPACE           &kp TAB           &kp DELETE          &kp INS              &trans                                                             &trans     &kp INS         &kp DELETE      &kp TAB       &kp SPACE        &kp ENTER    &kp ESCAPE
+&kp C_AC_SEARCH  &kp K_PASTE  &kp BACKSPACE       &kp K_CUT         &kp K_REDO          &kp K_CUT            &trans                                                             &trans     &kp K_COPY      &kp K_UNDO      &kp K_CUT     &kp BACKSPACE    &kp K_PASTE  &kp C_AC_SEARCH
+&kp LC(L)        &kp ENTER    &kp LC(LEFT_ARROW)  &kp LC(UP_ARROW)  &kp LC(DOWN_ARROW)  &kp LC(RIGHT_ARROW)  &trans             &trans          &trans      &trans  &trans      &trans     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp RETURN   &kp RC(L)
+&kp LC(F)        &kp LCTRL    &kp LEFT_ALT        &kp LEFT_WIN      &kp TAB             &kp LC(A)                                               &trans      &trans                         &kp HOME        &kp PG_DN       &kp PG_UP     &kp END          &trans       &kp RC(F)
+&trans           &trans       &trans              &trans            &trans                                   &kp LC(BACKSPACE)  &kp LEFT_SHIFT  &trans      &trans  &kp RSHIFT  &kp RCTRL                  &trans          &trans        &trans           &trans       &trans
             >;
         };
 
