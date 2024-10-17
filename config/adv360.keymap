@@ -30,14 +30,7 @@
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
-
-        esc_shift {
-            bindings = <&none>;
-            key-positions = <47>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     macros {
     };
