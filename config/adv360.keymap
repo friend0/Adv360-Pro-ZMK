@@ -50,11 +50,11 @@
 
         VIM {
             bindings = <
-&trans    &kp GRAVE       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON    &kp COMMA      &trans                                                 &trans  &trans            &trans     &trans     &trans         &trans    &trans
-&kp EXCL  &kp LEFT_BRACE  &kp SQT               &kp DOUBLE_QUOTES      &kp RIGHT_BRACE  &kp QUESTION   &trans                                                 &trans  &kp GREATER_THAN  &kp EQUAL  &kp MINUS  &kp LESS_THAN  &kp PIPE  &trans
-&kp HASH  &kp CARET       &kp EQUAL             &kp UNDER              &kp DOLLAR       &kp STAR       &trans       &kp PERIOD  &kp STAR      &trans  &trans  &trans  &kp BACKSPACE     &kp TAB    &kp SPACE  &kp ENTER      &trans    &trans
-&kp AT    &kp AMPS        &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PLUS         &kp BACKSLASH                           &kp SEMI      &trans                  &kp PERIOD        &kp SLASH  &kp TILDE  &kp SEMI       &trans    &trans
-&trans    &trans          &trans                &trans                 &trans                          &kp PERCENT  &kp COLON   &trans        &trans  &trans  &trans                    &trans     &trans     &trans         &trans    &trans
+&trans    &kp GRAVE       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON    &kp COMMA      &trans                                                 &trans  &trans  &trans         &trans     &trans     &trans    &trans
+&kp EXCL  &kp LEFT_BRACE  &kp SQT               &kp DOUBLE_QUOTES      &kp RIGHT_BRACE  &kp QUESTION   &trans                                                 &trans  &trans  &kp GT         &kp EQUAL  &kp MINUS  &kp LT    &kp PIPE
+&kp HASH  &kp CARET       &kp EQUAL             &kp UNDER              &kp DOLLAR       &kp STAR       &trans       &kp PERIOD  &kp STAR      &trans  &trans  &trans  &trans  &kp BACKSPACE  &kp TAB    &kp SPACE  &kp RET   &trans
+&kp AT    &kp AMPS        &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PLUS         &kp BACKSLASH                           &kp SEMI      &trans                  &trans  &kp DOT        &kp SLASH  &kp TILDE  &kp SEMI  &trans
+&trans    &trans          &trans                &trans                 &trans                          &kp PERCENT  &kp COLON   &trans        &trans  &trans  &trans          &trans         &trans     &trans     &trans    &trans
             >;
         };
 
