@@ -24,9 +24,10 @@
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick_tap_ms = <175>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+
+            quick-tap-ms = <175>;
         };
     };
 
@@ -40,11 +41,11 @@
 
         default_layer {
             bindings = <
-&caps_word             &kp N1          &kp N2              &kp N3                  &kp N4               &kp N5  &none                                                              &tog 5       &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp TAB                &kp Q           &kp W               &kp E                   &kp R                &kp T   &none                                                              &none        &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
-&mt LEFT_SHIFT ESCAPE  &kp A           &kp S               &kp D                   &kp F                &kp G   &none            &kp LCTRL     &kp LALT      &kp LGUI   &kp RCTRL  &none        &kp H   &kp J   &kp K      &kp L     &kp SEMI  &mt RIGHT_SHIFT APOS
-&kp LEFT_SHIFT         &mt LEFT_ALT Z  &mt LEFT_COMMAND X  &kp C                   &kp V                &kp B                                  &kp HOME      &kp PG_UP                          &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-&kp LCTRL              &kp LCTRL       &kp LEFT_ALT        &mt LS(LEFT_META) LEFT  &mt LEFT_META RIGHT          &lt 3 BACKSPACE  &lt 2 DELETE  &kp END       &kp PG_DN  &lt 2 RET  &lt 1 SPACE          &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &tog 5
+&caps_word             &kp N1          &kp N2           &kp N3                  &kp N4               &kp N5  &none                                                              &tog 5       &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
+&kp TAB                &kp Q           &kp W            &kp E                   &kp R                &kp T   &none                                                              &none        &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
+&mt LEFT_SHIFT ESCAPE  &kp A           &kp S            &kp D                   &kp F                &kp G   &none            &kp LCTRL     &kp LALT      &kp LGUI   &kp RCTRL  &none        &kp H   &kp J   &kp K      &kp L     &kp SEMI  &mt RIGHT_SHIFT APOS
+&kp LEFT_SHIFT         &mt LEFT_ALT Z  &mt LEFT_META X  &kp C                   &kp V                &kp B                                  &kp HOME      &kp PG_UP                          &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
+&kp LCTRL              &kp LEFT_ALT    &kp LEFT_META    &mt LS(LEFT_META) LEFT  &mt LEFT_META RIGHT          &lt 3 BACKSPACE  &lt 2 DELETE  &kp END       &kp PG_DN  &lt 2 RET  &lt 1 SPACE          &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &tog 5
             >;
         };
 
@@ -60,11 +61,11 @@
 
         cursor {
             bindings = <
-&kp ESCAPE       &kp ENTER    &kp SPACE           &kp TAB           &kp DELETE          &kp INS              &trans                                                             &trans     &kp INS         &kp DELETE      &kp TAB       &kp SPACE        &kp ENTER    &kp ESCAPE
-&kp C_AC_SEARCH  &kp K_PASTE  &kp BACKSPACE       &kp K_CUT         &kp K_REDO          &kp K_CUT            &trans                                                             &trans     &kp K_COPY      &kp K_UNDO      &kp K_CUT     &kp BACKSPACE    &kp K_PASTE  &kp C_AC_SEARCH
-&kp LC(L)        &kp ENTER    &kp LC(LEFT_ARROW)  &kp LC(UP_ARROW)  &kp LC(DOWN_ARROW)  &kp LC(RIGHT_ARROW)  &trans             &trans          &trans      &trans  &trans      &trans     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp RETURN   &kp RC(L)
-&kp LC(F)        &kp LCTRL    &kp LEFT_ALT        &kp LEFT_WIN      &kp TAB             &kp LC(A)                                               &trans      &trans                         &kp HOME        &kp PG_DN       &kp PG_UP     &kp END          &trans       &kp RC(F)
-&trans           &trans       &trans              &trans            &trans                                   &kp LC(BACKSPACE)  &kp LEFT_SHIFT  &trans      &trans  &kp RSHIFT  &kp RCTRL                  &trans          &trans        &trans           &trans       &trans
+&kp ESCAPE        &kp ENTER    &kp SPACE           &kp TAB           &kp DELETE          &kp INS              &trans                                                             &trans     &kp INS         &kp DELETE      &kp TAB       &kp SPACE        &kp ENTER    &kp ESCAPE
+&kp C_AC_SEARCH   &kp K_PASTE  &kp BACKSPACE       &kp K_CUT         &kp K_REDO          &kp K_CUT            &trans                                                             &trans     &kp K_COPY      &kp K_UNDO      &kp K_CUT     &kp BACKSPACE    &kp K_PASTE  &kp C_AC_SEARCH
+&mt LC(L) ESCAPE  &kp ENTER    &kp LC(LEFT_ARROW)  &kp LC(UP_ARROW)  &kp LC(DOWN_ARROW)  &kp LC(RIGHT_ARROW)  &trans             &trans          &trans      &trans  &trans      &trans     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp RETURN   &kp RC(L)
+&kp LC(F)         &kp LCTRL    &kp LEFT_ALT        &kp LEFT_WIN      &kp TAB             &kp LC(A)                                               &trans      &trans                         &kp HOME        &kp PG_DN       &kp PG_UP     &kp END          &trans       &kp RC(F)
+&trans            &trans       &trans              &trans            &trans                                   &kp LC(BACKSPACE)  &kp LEFT_SHIFT  &trans      &trans  &kp RSHIFT  &kp RCTRL                  &trans          &trans        &trans           &trans       &trans
             >;
         };
 
@@ -90,11 +91,11 @@
 
         default_mac {
             bindings = <
-&caps_word             &kp N1          &kp N2              &kp N3                  &kp N4               &kp N5  &none                                                              &to 0        &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp TAB                &kp Q           &kp W               &kp E                   &kp R                &kp T   &none                                                              &none        &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
-&mt LEFT_SHIFT ESCAPE  &kp A           &kp S               &kp D                   &kp F                &kp G   &none            &kp LCTRL     &kp LALT      &kp LGUI   &kp RCTRL  &none        &kp H   &kp J   &kp K      &kp L     &kp SEMI  &mt RIGHT_SHIFT APOS
-&kp LEFT_SHIFT         &mt LEFT_ALT Z  &mt LEFT_COMMAND X  &kp C                   &kp V                &kp B                                  &kp HOME      &kp PG_UP                          &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-&kp LCTRL              &kp LCTRL       &kp LEFT_ALT        &mt LS(LEFT_META) LEFT  &mt LEFT_META RIGHT          &lt 8 BACKSPACE  &lt 7 DELETE  &kp END       &kp PG_DN  &lt 7 RET  &lt 6 SPACE          &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &to 0
+&caps_word             &kp N1          &kp N2           &kp N3                  &kp N4               &kp N5  &none                                                              &to 0        &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
+&kp TAB                &kp Q           &kp W            &kp E                   &kp R                &kp T   &none                                                              &none        &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
+&mt LEFT_SHIFT ESCAPE  &kp A           &kp S            &kp D                   &kp F                &kp G   &none            &kp LCTRL     &kp LALT      &kp LGUI   &kp RCTRL  &none        &kp H   &kp J   &kp K      &kp L     &kp SEMI  &mt RIGHT_SHIFT APOS
+&kp LEFT_SHIFT         &mt LEFT_ALT Z  &mt LEFT_META X  &kp C                   &kp V                &kp B                                  &kp HOME      &kp PG_UP                          &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
+&kp LCTRL              &kp LCTRL       &kp LEFT_ALT     &mt LS(LEFT_META) LEFT  &mt LEFT_META RIGHT          &lt 8 BACKSPACE  &lt 7 DELETE  &kp END       &kp PG_DN  &lt 7 RET  &lt 6 SPACE          &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &to 0
             >;
         };
 
@@ -110,11 +111,11 @@
 
         M_CURSOR {
             bindings = <
-&kp ESCAPE       &kp ENTER    &kp SPACE           &kp TAB           &kp DELETE          &kp INS              &trans                                                             &trans     &kp INS         &kp DELETE      &kp TAB       &kp SPACE        &kp ENTER    &kp ESCAPE
-&kp C_AC_SEARCH  &kp K_PASTE  &kp BACKSPACE       &kp K_CUT         &kp K_REDO          &kp K_CUT            &trans                                                             &trans     &kp K_COPY      &kp K_UNDO      &kp K_CUT     &kp BACKSPACE    &kp K_PASTE  &kp C_AC_SEARCH
-&kp LG(L)        &kp ENTER    &kp LA(LEFT_ARROW)  &kp LA(UP_ARROW)  &kp LA(DOWN_ARROW)  &kp LA(RIGHT_ARROW)  &trans             &trans          &trans      &trans  &trans      &trans     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp RETURN   &kp RC(L)
-&kp LG(F)        &kp LCTRL    &kp LEFT_ALT        &kp LEFT_WIN      &kp TAB             &kp LG(A)                                               &trans      &trans                         &kp HOME        &kp PG_DN       &kp PG_UP     &kp END          &trans       &kp RC(F)
-&trans           &trans       &trans              &trans            &trans                                   &kp LA(BACKSPACE)  &kp LEFT_SHIFT  &trans      &trans  &kp RSHIFT  &kp RCTRL                  &trans          &trans        &trans           &trans       &trans
+&kp ESCAPE        &kp ENTER    &kp SPACE           &kp TAB           &kp DELETE          &kp INS              &trans                                                             &trans     &kp INS         &kp DELETE      &kp TAB       &kp SPACE        &kp ENTER    &kp ESCAPE
+&kp C_AC_SEARCH   &kp K_PASTE  &kp BACKSPACE       &kp K_CUT         &kp K_REDO          &kp K_CUT            &trans                                                             &trans     &kp K_COPY      &kp K_UNDO      &kp K_CUT     &kp BACKSPACE    &kp K_PASTE  &kp C_AC_SEARCH
+&mt LG(L) ESCAPE  &kp ENTER    &kp LA(LEFT_ARROW)  &kp LA(UP_ARROW)  &kp LA(DOWN_ARROW)  &kp LA(RIGHT_ARROW)  &trans             &trans          &trans      &trans  &trans      &trans     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp RETURN   &kp RC(L)
+&kp LG(F)         &kp LCTRL    &kp LEFT_ALT        &kp LEFT_WIN      &kp TAB             &kp LG(A)                                               &trans      &trans                         &kp HOME        &kp PG_DN       &kp PG_UP     &kp END          &trans       &kp RC(F)
+&trans            &trans       &trans              &trans            &trans                                   &kp LA(BACKSPACE)  &kp LEFT_SHIFT  &trans      &trans  &kp RSHIFT  &kp RCTRL                  &trans          &trans        &trans           &trans       &trans
             >;
         };
 
