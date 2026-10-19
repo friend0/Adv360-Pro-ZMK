@@ -41,13 +41,17 @@
     keymap {
         compatible = "zmk,keymap";
 
+        // Layers: 0 default  1 VIM  2 cursor  3 keypad (Linux)
+        //         4 default_mac  5 M_VIM  6 M_CURSOR  7 KEYPAD (Mac)
+        //         8 mod (highest, so it works from either set)
+
         default_layer {
             bindings = <
-&caps_word             &kp N1        &kp N2         &kp N3                  &kp N4               &kp N5  &bt BT_CLR                                                         &mo 4         &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp TAB                &kp Q         &kp W          &kp E                   &kp R                &kp T   &bt BT_SEL 0                                                       &bt BT_SEL 2  &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
-&mt LEFT_SHIFT ESCAPE  &kp A         &kp S          &kp D                   &kp F                &kp G   &bt BT_SEL 1     &kp LCTRL     &kp LALT      &kp LGUI   &kp RCTRL  &bt BT_SEL 3  &kp H   &kp J   &kp K      &kp L     &kp SEMI  &mt RIGHT_SHIFT APOS
+&caps_word             &kp N1        &kp N2         &kp N3                  &kp N4               &kp N5  &none                                                              &mo 8         &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
+&kp TAB                &kp Q         &kp W          &kp E                   &kp R                &kp T   &none                                                              &none         &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
+&mt LEFT_SHIFT ESCAPE  &kp A         &kp S          &kp D                   &kp F                &kp G   &none            &kp LCTRL     &kp LALT      &kp LGUI   &kp RCTRL  &none         &kp H   &kp J   &kp K      &kp L     &kp SEMI  &mt RIGHT_SHIFT APOS
 &kp LEFT_SHIFT         &kp Z         &kp X          &kp C                   &kp V                &kp B                                  &kp HOME      &kp PG_UP                           &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-&kp LCTRL              &kp LEFT_ALT  &kp LEFT_META  &mt LS(LEFT_META) LEFT  &mt LEFT_META RIGHT          &lt 3 BACKSPACE  &lt 2 DELETE  &kp END       &kp PG_DN  &lt 2 RET  &lt 1 SPACE           &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &tog 5
+&kp LCTRL              &kp LEFT_ALT  &kp LEFT_META  &mt LS(LEFT_META) LEFT  &mt LEFT_META RIGHT          &lt 3 BACKSPACE  &lt 2 DELETE  &kp END       &kp PG_DN  &lt 2 RET  &lt 1 SPACE           &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &tog 4
             >;
         };
 
@@ -73,31 +77,21 @@
 
         keypad {
             bindings = <
-&kp K_SLEEP  &kp N1     &kp N2    &kp N3    &kp N4     &kp N5  &trans                                                   &mo 1      &kp N6  &kp KP_NUM         &kp KP_EQUAL       &kp KP_DIVIDE          &kp KP_MULTIPLY  &kp MINUS
+&kp K_SLEEP  &kp N1     &kp N2    &kp N3    &kp N4     &kp N5  &trans                                                   &mo 8      &kp N6  &kp KP_NUM         &kp KP_EQUAL       &kp KP_DIVIDE          &kp KP_MULTIPLY  &kp MINUS
 &kp TAB      &kp F12    &kp F7    &kp F8    &kp F9     &kp T   &none                                                    &none      &kp Y   &kp KP_N7          &kp KP_N8          &kp KP_N9              &kp KP_MINUS     &kp BSLH
 &kp ESC      &kp F11    &kp F4    &kp F5    &kp F6     &kp G   &none     &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &none      &kp H   &mt J KP_NUMBER_4  &mt K KP_NUMBER_5  &mt RS(G) KP_NUMBER_6  &kp KP_PLUS      &kp SQT
 &kp LSHFT    &kp F10    &kp F1    &kp F2    &kp F3     &kp B                        &kp HOME      &kp PG_UP                        &kp N   &kp KP_N1          &kp KP_N2          &kp KP_N3              &kp KP_ENTER     &kp RSHFT
-&mo 0        &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT          &kp BSPC  &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp KP_N0          &kp UP             &kp DOWN           &kp KP_DOT             &kp COMMA        &mo 0
-            >;
-        };
-
-        mod {
-            bindings = <
-&none   &bt BT_SEL 0     &bt BT_SEL 1                      &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4   &none                                                      &trans                  &none  &none       &none       &none  &none  &none
-&none   &bt BT_DISC 0    &bt BT_DISC 1                     &bt BT_DISC 2    &bt BT_DISC 3    &bt BT_DISC 4  &bootloader                                                &bootloader             &none  &none       &none       &none  &none  &none
-&none   &none            &none                             &none            &none            &none          &none        &none  &none      &bt BT_CLR      &none       &rgb_ug RGB_MEFS_CMD 5  &none  &none       &none       &none  &none  &none
-&none   &none            &none                             &none            &macro_ver       &none                              &none      &none                                               &none  &none       &none       &none  &none  &none
-&trans  &rgb_ug RGB_TOG  &rgb_ug RGB_COLOR_HSB(236,81,57)  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI                 &none        &none  &none      &bt BT_CLR_ALL  &bl BL_TOG  &rgb_ug RGB_TOG                &bl BL_INC  &bl BL_DEC  &none  &none  &none
+&mo 8        &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT          &kp BSPC  &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp KP_N0          &kp UP             &kp DOWN           &kp KP_DOT             &kp COMMA        &mo 8
             >;
         };
 
         default_mac {
             bindings = <
-&caps_word             &kp N1          &kp N2           &kp N3                  &kp N4               &kp N5  &bt BT_CLR                                                         &mo 4         &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp TAB                &kp Q           &kp W            &kp E                   &kp R                &kp T   &bt BT_SEL 0                                                       &bt BT_SEL 2  &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
-&mt LEFT_SHIFT ESCAPE  &kp A           &kp S            &kp D                   &kp F                &kp G   &bt BT_SEL 1     &kp LCTRL     &kp LALT      &kp LGUI   &kp RCTRL  &bt BT_SEL 3  &kp H   &kp J   &kp K      &kp L     &kp SEMI  &mt RIGHT_SHIFT APOS
-&kp LEFT_SHIFT         &mt LEFT_ALT Z  &mt LEFT_META X  &kp C                   &kp V                &kp B                                  &kp HOME      &kp PG_UP                           &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-&kp LCTRL              &kp LCTRL       &kp LEFT_ALT     &mt LS(LEFT_META) LEFT  &mt LEFT_META RIGHT          &lt 8 BACKSPACE  &lt 7 DELETE  &kp END       &kp PG_DN  &lt 7 RET  &lt 6 SPACE           &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &to 0
+&caps_word             &kp N1          &kp N2           &kp N3                  &kp N4               &kp N5  &none                                                              &mo 8         &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
+&kp TAB                &kp Q           &kp W            &kp E                   &kp R                &kp T   &none                                                              &none         &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
+&mt LEFT_SHIFT ESCAPE  &kp A           &kp S            &kp D                   &kp F                &kp G   &none            &kp LCTRL     &kp LALT      &kp LGUI   &kp RCTRL  &none         &kp H   &kp J   &kp K      &kp L     &kp SEMI  &mt RIGHT_SHIFT APOS
+&kp LEFT_SHIFT         &kp Z           &kp X            &kp C                   &kp V                &kp B                                  &kp HOME      &kp PG_UP                           &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
+&kp LCTRL              &kp LEFT_ALT    &kp LEFT_META    &mt LS(LEFT_META) LEFT  &mt LEFT_META RIGHT          &lt 7 BACKSPACE  &lt 6 DELETE  &kp END       &kp PG_DN  &lt 6 RET  &lt 5 SPACE           &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &to 0
             >;
         };
 
@@ -114,20 +108,30 @@
         M_CURSOR {
             bindings = <
 &kp ESCAPE        &kp ENTER    &kp SPACE           &kp TAB           &kp DELETE          &kp INS              &trans                                                             &trans     &kp INS         &kp DELETE      &kp TAB       &kp SPACE        &kp ENTER    &kp ESCAPE
-&kp C_AC_SEARCH   &kp K_PASTE  &kp BACKSPACE       &kp K_CUT         &kp K_REDO          &kp K_CUT            &trans                                                             &trans     &kp K_COPY      &kp K_UNDO      &kp K_CUT     &kp BACKSPACE    &kp K_PASTE  &kp C_AC_SEARCH
+&kp LG(SPACE)     &kp LG(V)    &kp BACKSPACE       &kp LG(X)         &kp LG(LS(Z))       &kp LG(X)            &trans                                                             &trans     &kp LG(C)       &kp LG(Z)       &kp LG(X)     &kp BACKSPACE    &kp LG(V)    &kp LG(SPACE)
 &mt LG(L) ESCAPE  &kp ENTER    &kp LA(LEFT_ARROW)  &kp LA(UP_ARROW)  &kp LA(DOWN_ARROW)  &kp LA(RIGHT_ARROW)  &trans             &trans          &trans      &trans  &trans      &trans     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp RETURN   &kp RC(L)
-&kp LG(F)         &kp LCTRL    &kp LEFT_ALT        &kp LEFT_WIN      &kp TAB             &kp LG(A)                                               &trans      &trans                         &kp HOME        &kp PG_DN       &kp PG_UP     &kp END          &trans       &kp RC(F)
+&kp LG(F)         &kp LCTRL    &kp LS(TAB)         &kp LEFT_WIN      &kp TAB             &kp LG(A)                                               &trans      &trans                         &kp HOME        &kp PG_DN       &kp PG_UP     &kp END          &trans       &kp RC(F)
 &trans            &trans       &trans              &trans            &trans                                   &kp LA(BACKSPACE)  &kp LA(DELETE)  &trans      &trans  &kp RSHIFT  &kp RCTRL                  &trans          &trans        &trans           &trans       &trans
             >;
         };
 
         KEYPAD {
             bindings = <
-&kp K_SLEEP  &kp N1     &kp N2    &kp N3    &kp N4     &kp N5  &trans                                                   &mo 1      &kp N6  &kp KP_NUM         &kp KP_EQUAL       &kp KP_DIVIDE              &kp KP_MULTIPLY  &kp MINUS
+&kp K_SLEEP  &kp N1     &kp N2    &kp N3    &kp N4     &kp N5  &trans                                                   &mo 8      &kp N6  &kp KP_NUM         &kp KP_EQUAL       &kp KP_DIVIDE              &kp KP_MULTIPLY  &kp MINUS
 &kp TAB      &kp F12    &kp F7    &kp F8    &kp F9     &kp T   &none                                                    &none      &kp Y   &kp KP_N7          &kp KP_N8          &kp KP_N9                  &kp KP_MINUS     &kp BSLH
 &kp ESC      &kp F11    &kp F4    &kp F5    &kp F6     &kp G   &none     &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &none      &kp H   &mt J KP_NUMBER_4  &mt K KP_NUMBER_5  &mt RS(KP_N6) KP_NUMBER_6  &kp KP_PLUS      &kp SQT
 &kp LSHFT    &kp F10    &kp F1    &kp F2    &kp F3     &kp B                        &kp HOME      &kp PG_UP                        &kp N   &kp KP_N1          &kp KP_N2          &kp KP_N3                  &kp KP_ENTER     &kp RSHFT
-&mo 0        &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT          &kp BSPC  &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp KP_N0          &kp UP             &kp DOWN           &kp KP_DOT                 &kp COMMA        &mo 0
+&mo 8        &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT          &kp BSPC  &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp KP_N0          &kp UP             &kp DOWN           &kp KP_DOT                 &kp COMMA        &mo 8
+            >;
+        };
+
+        mod {
+            bindings = <
+&none   &bt BT_SEL 0     &bt BT_SEL 1                      &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4   &bt BT_CLR                                                    &trans                  &none  &none       &none       &none  &none  &none
+&none   &bt BT_DISC 0    &bt BT_DISC 1                     &bt BT_DISC 2    &bt BT_DISC 3    &bt BT_DISC 4  &bootloader                                                &bootloader             &none  &none       &none       &none  &none  &none
+&none   &none            &none                             &none            &none            &none          &none        &none  &none      &none           &none       &rgb_ug RGB_MEFS_CMD 5  &none  &none       &none       &none  &none  &none
+&none   &none            &none                             &none            &macro_ver       &none                              &none      &none                                               &none  &none       &none       &none  &none  &none
+&trans  &rgb_ug RGB_TOG  &rgb_ug RGB_COLOR_HSB(236,81,57)  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI                 &none        &none  &none      &bt BT_CLR_ALL  &bl BL_TOG  &rgb_ug RGB_TOG                &bl BL_INC  &bl BL_DEC  &none  &none  &none
             >;
         };
     };
